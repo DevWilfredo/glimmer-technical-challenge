@@ -1,18 +1,8 @@
-const express = require("express");
-const cors = require("cors");
+require('dotenv').config();
 
-const app = express();
+const app = require('./app');
+const PORT = process.env.PORT || 3000;
 
-app.use(cors());
-app.use(express.json());
-
-app.get("/", (req, res) => {
-  res.send("API is running");
-});
-
-// TODO: add routes
-
-const PORT = 3001;
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+    console.log(`Server running on port: ${PORT}`);
 });
